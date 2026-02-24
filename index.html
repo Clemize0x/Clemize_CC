@@ -229,7 +229,7 @@
       height: 100% !important;
     }
 
-    /* Fade uniquement le bas */
+    /* Fade bas desktop */
     .hero-visual::after {
       content: '';
       position: absolute;
@@ -242,12 +242,24 @@
 
     @media (max-width: 640px) {
       .hero-visual {
-        height: 300px;
+        height: 360px;
         max-width: 100%;
         overflow: hidden;
       }
+      /* Fade gauche + droite pour éviter la coupure */
+      .hero-visual::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(to right,  var(--bg) 0%, transparent 18%, transparent 82%, var(--bg) 100%),
+          linear-gradient(to bottom, transparent 0%, transparent 55%, var(--bg) 100%);
+        pointer-events: none;
+        z-index: 2;
+      }
       .hero-visual::after {
-        height: 40%;
+        height: 45%;
+        z-index: 1;
       }
     }
 
@@ -961,8 +973,8 @@
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(45, W() / H(), 0.1, 1000);
     const isMobile = window.innerWidth <= 640;
-    camera.position.z = isMobile ? 3.2 : 2.4;
-    camera.position.y = 0.1;
+    camera.position.z = isMobile ? 2.8 : 2.4;
+    camera.position.y = isMobile ? 0.05 : 0.1;
 
     // Ambient + soft directional light
     scene.add(new THREE.AmbientLight(0xffffff, 0.6));
@@ -1144,7 +1156,8 @@
     window.addEventListener('resize', () => {
       renderer.setSize(W(), H());
       camera.aspect = W() / H();
-      camera.position.z = W() <= 640 ? 3.2 : 2.4;
+      camera.position.z = W() <= 640 ? 2.8 : 2.4;
+      camera.position.y = W() <= 640 ? 0.05 : 0.1;
       camera.updateProjectionMatrix();
     });
 

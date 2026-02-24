@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Fragoso Investment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --gold: #c9a84c;
+      --ink: #1a1a1a; --ink-mid: #444440; --ink-soft: #7a7a74;
+      --border: #e8e6e0; --bg: #f7f6f3; --bg-card: #ffffff; --bg-section: #f2f0ec;
+      --serif: 'EB Garamond', Georgia, serif;
+      --sans: 'Instrument Sans', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+    nav { position: fixed; top: 16px; left: 50%; transform: translateX(-50%); z-index: 100; width: calc(100% - 48px); max-width: 1160px; height: 60px; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); border: 1px solid var(--border); border-radius: 12px; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+    .nav-logo { text-decoration: none; display: flex; flex-direction: column; line-height: 1; gap: 2px; }
+    .nav-logo .brand-name { font-family: var(--serif); font-size: 1.1rem; font-weight: 500; letter-spacing: 0.18em; color: var(--ink); text-transform: uppercase; }
+    .nav-logo .brand-sub { font-size: 0.45rem; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.78rem; color: var(--ink-mid); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+    .nav-cta { font-size: 0.75rem; font-weight: 500; color: #fff; background: var(--ink); text-decoration: none; padding: 0.55rem 1.25rem; border-radius: 8px; transition: background 0.2s; }
+    .nav-cta:hover { background: #333; }
+    @media (max-width: 640px) { .nav-links { display: none; } }
+
+    .page-hero { padding: 140px 5% 5rem; background: var(--bg-card); border-bottom: 1px solid var(--border); }
+    .section-pill { display: inline-block; font-size: 0.72rem; font-weight: 500; color: #fff; background: var(--gold); border-radius: 999px; padding: 0.3rem 0.9rem; margin-bottom: 1.2rem; }
+    .page-title { font-family: var(--serif); font-size: clamp(2.4rem, 5.5vw, 4rem); font-weight: 500; line-height: 1.1; color: var(--ink); margin-bottom: 1.4rem; }
+    .page-subtitle { font-size: 1.05rem; color: var(--ink-soft); line-height: 1.75; max-width: 540px; }
+
+    /* Contact layout */
+    .contact-section { padding: 6rem 5%; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; max-width: 1060px; margin: 0 auto; align-items: start; }
+
+    /* Left info */
+    .contact-info-title { font-family: var(--serif); font-size: 1.5rem; font-weight: 500; color: var(--ink); margin-bottom: 0.8rem; }
+    .contact-info-sub { font-size: 0.9rem; color: var(--ink-soft); line-height: 1.75; margin-bottom: 2rem; }
+
+    .info-cards { display: flex; flex-direction: column; gap: 0.8rem; }
+    .info-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.2rem; display: flex; gap: 0.9rem; align-items: flex-start; }
+    .info-card-icon { font-family: var(--serif); font-size: 1rem; color: var(--gold); flex-shrink: 0; padding-top: 2px; }
+    .info-card-label { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); display: block; margin-bottom: 0.15rem; }
+    .info-card-val { font-size: 0.88rem; color: var(--ink-mid); }
+    .info-card-val a { color: var(--ink-mid); text-decoration: none; }
+    .info-card-val a:hover { color: var(--ink); }
+
+    .free-note { margin-top: 2rem; padding: 1rem 1.2rem; background: rgba(201,168,76,0.06); border: 1px solid rgba(201,168,76,0.2); border-radius: 10px; font-size: 0.82rem; color: var(--ink-mid); line-height: 1.6; }
+    .free-note strong { color: var(--gold); }
+
+    /* Form */
+    .form-title { font-family: var(--serif); font-size: 1.5rem; font-weight: 500; color: var(--ink); margin-bottom: 0.5rem; }
+    .form-sub { font-size: 0.85rem; color: var(--ink-soft); margin-bottom: 2rem; }
+
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-label { font-size: 0.68rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-mid); }
+    .form-input, .form-select, .form-textarea { background: var(--bg-card); border: 1px solid var(--border); color: var(--ink); font-family: var(--sans); font-size: 0.9rem; padding: 0.75rem 0.9rem; border-radius: 8px; outline: none; transition: border-color 0.2s; width: 100%; }
+    .form-input::placeholder, .form-textarea::placeholder { color: #bbb; }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: #aaa; }
+    .form-textarea { min-height: 120px; resize: vertical; }
+    .form-select { appearance: none; cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 0.9rem center; padding-right: 2.5rem; }
+    .form-select option { background: #fff; }
+
+    .consent-row { display: flex; align-items: flex-start; gap: 0.7rem; }
+    .consent-row input[type="checkbox"] { width: 15px; height: 15px; accent-color: var(--ink); margin-top: 3px; flex-shrink: 0; cursor: pointer; }
+    .consent-row label { font-size: 0.75rem; color: var(--ink-soft); line-height: 1.5; cursor: pointer; }
+
+    .btn-submit { font-size: 0.82rem; font-weight: 500; color: #fff; background: var(--ink); border: none; padding: 0.85rem 2rem; border-radius: 8px; cursor: pointer; transition: background 0.2s, transform 0.15s; width: 100%; }
+    .btn-submit:hover { background: #2a2a2a; transform: translateY(-1px); }
+    .form-note { font-size: 0.7rem; color: var(--ink-soft); text-align: center; }
+
+    .form-success { display: none; padding: 2rem; background: rgba(201,168,76,0.05); border: 1px solid rgba(201,168,76,0.2); border-radius: 10px; text-align: center; }
+    .form-success p { font-size: 0.9rem; color: var(--ink-mid); }
+    .form-success strong { color: var(--gold); }
+
+    @media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; gap: 3rem; } }
+    @media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+
+    /* RDV */
+    #rdv { scroll-margin-top: 80px; }
+    .rdv-section { padding: 6rem 5%; background: var(--bg-section); border-top: 1px solid var(--border); }
+    .rdv-inner { max-width: 900px; margin: 0 auto; }
+    .rdv-header { text-align: center; margin-bottom: 2.5rem; }
+    .section-title { font-family: var(--serif); font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 500; line-height: 1.15; color: var(--ink); margin-bottom: 0.8rem; }
+    .rdv-header p { font-size: 0.9rem; color: var(--ink-soft); }
+
+    .calendly-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      min-height: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      text-align: center;
+      padding: 3rem;
+    }
+    .cal-icon { font-family: var(--serif); font-size: 3.5rem; font-style: italic; color: rgba(201,168,76,0.25); line-height: 1; }
+    .cal-title { font-family: var(--serif); font-size: 1.4rem; color: var(--ink); }
+    .cal-sub { font-size: 0.88rem; color: var(--ink-soft); max-width: 400px; line-height: 1.7; }
+    .cal-badge { display: inline-block; font-size: 0.68rem; font-weight: 500; color: var(--gold); border: 1px solid rgba(201,168,76,0.3); border-radius: 999px; padding: 0.3rem 1rem; }
+
+    /* Calendly embed — uncomment and replace URL when ready:
+    .calendly-inline-widget { min-width: 320px; height: 700px; }
+    */
+
+    footer { background: var(--bg-card); border-top: 1px solid var(--border); padding: 4rem 5% 2.5rem; }
+    .footer-top { display: grid; grid-template-columns: 1.8fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+    .footer-brand .fbrand-name { font-family: var(--serif); font-size: 1.1rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); display: block; }
+    .footer-brand .fbrand-sub { font-size: 0.45rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); display: block; margin-top: 2px; margin-bottom: 1rem; }
+    .footer-brand p { font-size: 0.85rem; color: var(--ink-soft); line-height: 1.7; max-width: 260px; }
+    .footer-col h4 { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink); margin-bottom: 1.2rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+    .footer-col ul a { font-size: 0.88rem; color: var(--ink-soft); text-decoration: none; transition: color 0.2s; }
+    .footer-col ul a:hover { color: var(--ink); }
+    .footer-bottom { border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    .footer-bottom p { font-size: 0.75rem; color: var(--ink-soft); }
+    .footer-bottom a { color: var(--ink-soft); text-decoration: none; }
+    @media (max-width: 900px) { .footer-top { grid-template-columns: 1fr 1fr; } .footer-brand { grid-column: 1/-1; } }
+
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: 0.12s; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <span class="brand-name">Fragoso</span>
+      <span class="brand-sub">Investment</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">À propos</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <a href="#rdv" class="nav-cta">Prendre rendez-vous →</a>
+  </nav>
+
+  <div class="page-hero">
+    <span class="section-pill">Nous contacter</span>
+    <h1 class="page-title">Parlons de votre<br>patrimoine.</h1>
+    <p class="page-subtitle">Le premier entretien est gratuit et sans engagement. Prenez le temps de nous exposer votre situation — ensemble, nous tracerons le chemin.</p>
+  </div>
+
+  <section class="contact-section">
+    <div class="contact-grid">
+
+      <!-- Infos -->
+      <div class="reveal">
+        <h2 class="contact-info-title">Une question ?<br>Écrivez-nous.</h2>
+        <p class="contact-info-sub">Pour toute demande d'information ou de rendez-vous, utilisez le formulaire ou contactez-nous directement.</p>
+
+        <div class="info-cards">
+          <div class="info-card">
+            <span class="info-card-icon">✉</span>
+            <div>
+              <span class="info-card-label">Email</span>
+              <span class="info-card-val"><a href="mailto:clement.fragoso@gmail.com">clement.fragoso@gmail.com</a></span>
+            </div>
+          </div>
+          <div class="info-card">
+            <span class="info-card-icon">◎</span>
+            <div>
+              <span class="info-card-label">Localisation</span>
+              <span class="info-card-val">Paris & Île-de-France<br>Consultations présentiel & visio</span>
+            </div>
+          </div>
+          <div class="info-card">
+            <span class="info-card-icon">◷</span>
+            <div>
+              <span class="info-card-label">Délai de réponse</span>
+              <span class="info-card-val">Sous 24h ouvrées</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="free-note">
+          <strong>Premier entretien gratuit</strong> — 45 minutes, sans engagement.<br>
+          En visio ou en présentiel selon vos préférences.
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="reveal reveal-delay-1">
+        <h2 class="form-title">Envoyez-nous un message.</h2>
+        <p class="form-sub">Nous vous répondrons dans les meilleurs délais.</p>
+
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/VOTRE_ID_FORMSPREE" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="prenom">Prénom *</label>
+              <input class="form-input" type="text" id="prenom" name="prenom" placeholder="Jean" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="nom">Nom *</label>
+              <input class="form-input" type="text" id="nom" name="nom" placeholder="Dupont" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="email">Email *</label>
+              <input class="form-input" type="email" id="email" name="email" placeholder="jean.dupont@email.com" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="tel">Téléphone</label>
+              <input class="form-input" type="tel" id="tel" name="tel" placeholder="+33 6 00 00 00 00" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="sujet">Sujet *</label>
+            <select class="form-select" id="sujet" name="sujet" required>
+              <option value="" disabled selected>Sélectionnez un sujet</option>
+              <option value="premier-rdv">Premier entretien gratuit</option>
+              <option value="investissement">Investissement & épargne</option>
+              <option value="fiscalite">Optimisation fiscale</option>
+              <option value="immobilier">Immobilier & défiscalisation</option>
+              <option value="transmission">Transmission & succession</option>
+              <option value="retraite">Retraite & prévoyance</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">Message *</label>
+            <textarea class="form-textarea" id="message" name="message" placeholder="Décrivez brièvement votre situation et vos objectifs..." required></textarea>
+          </div>
+          <div class="consent-row">
+            <input type="checkbox" id="consent" name="consent" required />
+            <label for="consent">J'accepte que mes données soient utilisées pour traiter ma demande, conformément à la politique de confidentialité. *</label>
+          </div>
+          <button type="submit" class="btn-submit">Envoyer le message →</button>
+          <p class="form-note">* Champs obligatoires</p>
+        </form>
+
+        <div class="form-success" id="formSuccess">
+          <p><strong>Message envoyé !</strong></p>
+          <p style="margin-top:0.4rem;">Nous vous répondrons dans les meilleurs délais, sous 24h ouvrées.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calendly RDV -->
+  <section class="rdv-section" id="rdv">
+    <div class="rdv-inner">
+      <div class="rdv-header reveal">
+        <span class="section-pill">Agenda en ligne</span>
+        <h2 class="section-title" style="margin-top:1rem;">Réservez votre entretien directement.</h2>
+        <p>Choisissez le créneau qui vous convient. Gratuit, sans engagement.</p>
+      </div>
+
+      <div class="reveal">
+        <div class="calendly-inline-widget" data-url="https://calendly.com/clement-fragoso/30min" style="min-width:320px;height:700px;border-radius:16px;overflow:hidden;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="fbrand-name">Fragoso</span>
+        <span class="fbrand-sub">Investment</span>
+        <p>Conseil en gestion de patrimoine indépendant. Expertise, discrétion, performance.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#rdv">Prendre rendez-vous</a></li>
+          <li><a href="mailto:clement.fragoso@gmail.com">Email</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Fragoso Investment — Tous droits réservés.</p>
+      <p>CGP Indépendant · <a href="#">Mentions légales</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const revs = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); io.unobserve(x.target); } }), { threshold: 0.08 });
+    revs.forEach(el => io.observe(el));
+
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('.btn-submit');
+      btn.textContent = 'Envoi…'; btn.disabled = true;
+      try {
+        const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
+        if (res.ok) {
+          form.style.display = 'none';
+          document.getElementById('formSuccess').style.display = 'block';
+        } else { throw new Error(); }
+      } catch {
+        // Fallback mailto
+        const d = new FormData(form);
+        window.location.href = `mailto:clement.fragoso@gmail.com?subject=Contact - ${d.get('sujet')}&body=${d.get('prenom')} ${d.get('nom')} (${d.get('email')})%0A%0A${d.get('message')}`;
+        btn.textContent = 'Envoyer le message →'; btn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

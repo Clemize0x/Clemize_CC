@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Fragoso Investment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --gold: #c9a84c; --gold-bg: #fdf6e7;
+      --ink: #1a1a1a; --ink-mid: #444440; --ink-soft: #7a7a74;
+      --border: #e8e6e0; --bg: #f7f6f3; --bg-card: #ffffff; --bg-section: #f2f0ec;
+      --serif: 'EB Garamond', Georgia, serif;
+      --sans: 'Instrument Sans', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+    nav { position: fixed; top: 16px; left: 50%; transform: translateX(-50%); z-index: 100; width: calc(100% - 48px); max-width: 1160px; height: 60px; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); border: 1px solid var(--border); border-radius: 12px; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+    .nav-logo { text-decoration: none; display: flex; flex-direction: column; line-height: 1; gap: 2px; }
+    .nav-logo .brand-name { font-family: var(--serif); font-size: 1.1rem; font-weight: 500; letter-spacing: 0.18em; color: var(--ink); text-transform: uppercase; }
+    .nav-logo .brand-sub { font-size: 0.45rem; font-weight: 400; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.78rem; color: var(--ink-mid); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+    .nav-cta { font-size: 0.75rem; font-weight: 500; color: #fff; background: var(--ink); text-decoration: none; padding: 0.55rem 1.25rem; border-radius: 8px; transition: background 0.2s, transform 0.15s; }
+    .nav-cta:hover { background: #333; transform: translateY(-1px); }
+    @media (max-width: 640px) { .nav-links { display: none; } }
+
+    /* Page hero */
+    .page-hero { padding: 140px 5% 6rem; background: var(--bg-card); border-bottom: 1px solid var(--border); }
+    .page-hero-inner { max-width: 720px; }
+    .section-pill { display: inline-block; font-size: 0.72rem; font-weight: 500; color: #fff; background: var(--gold); border-radius: 999px; padding: 0.3rem 0.9rem; margin-bottom: 1.2rem; }
+    .page-title { font-family: var(--serif); font-size: clamp(2.4rem, 5.5vw, 4rem); font-weight: 500; line-height: 1.1; color: var(--ink); margin-bottom: 1.4rem; }
+    .page-subtitle { font-size: 1.05rem; color: var(--ink-soft); line-height: 1.75; max-width: 540px; }
+
+    /* Services list */
+    .services-list { max-width: 1060px; margin: 0 auto; padding: 6rem 5%; }
+
+    .service-item {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 2.5rem;
+      padding: 4rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .service-item:first-child { padding-top: 0; }
+    .service-item:last-child { border-bottom: none; }
+
+    .svc-num {
+      font-family: var(--serif);
+      font-size: 2.8rem;
+      font-style: italic;
+      color: rgba(201,168,76,0.2);
+      line-height: 1;
+      padding-top: 6px;
+    }
+
+    .svc-title {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .svc-desc {
+      font-size: 0.97rem;
+      color: var(--ink-soft);
+      line-height: 1.8;
+      max-width: 680px;
+      margin-bottom: 2rem;
+    }
+
+    .svc-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .svc-tag {
+      font-size: 0.72rem;
+      color: var(--ink-mid);
+      background: var(--bg-section);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.3rem 0.85rem;
+    }
+
+    @media (max-width: 640px) { .service-item { grid-template-columns: 1fr; gap: 0.8rem; } .svc-num { font-size: 2rem; } }
+
+    /* Approach */
+    .approach-section { background: var(--bg-section); padding: 6rem 5%; border-top: 1px solid var(--border); }
+    .approach-header { text-align: center; margin-bottom: 4rem; }
+    .section-title { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 500; line-height: 1.15; color: var(--ink); margin-bottom: 0.8rem; }
+    .section-sub { font-size: 0.97rem; color: var(--ink-soft); line-height: 1.75; }
+    .approach-header .section-sub { max-width: 500px; margin: 0 auto; }
+
+    .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5px; background: var(--border); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; max-width: 1060px; margin: 0 auto; }
+    .step-card { background: var(--bg-card); padding: 2rem 1.6rem; }
+    .step-card:hover { background: #fafaf8; }
+    .step-n { font-family: var(--serif); font-size: 2.2rem; font-style: italic; color: rgba(201,168,76,0.22); display: block; margin-bottom: 0.8rem; line-height: 1; }
+    .step-t { font-family: var(--serif); font-size: 1.05rem; font-weight: 500; color: var(--ink); margin-bottom: 0.5rem; }
+    .step-d { font-size: 0.82rem; color: var(--ink-soft); line-height: 1.6; }
+    @media (max-width: 760px) { .steps-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .steps-grid { grid-template-columns: 1fr; } }
+
+    /* CTA */
+    .cta-section { padding: 6rem 5%; text-align: center; background: var(--bg); }
+    .cta-inner { max-width: 560px; margin: 0 auto; }
+    .cta-actions { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
+    .btn-dark { font-size: 0.8rem; font-weight: 500; color: #fff; background: var(--ink); text-decoration: none; padding: 0.75rem 1.75rem; border-radius: 8px; display: inline-flex; align-items: center; gap: 0.5rem; transition: background 0.2s, transform 0.15s; }
+    .btn-dark:hover { background: #2a2a2a; transform: translateY(-1px); }
+    .btn-outline { font-size: 0.8rem; color: var(--ink); background: transparent; border: 1px solid var(--border); text-decoration: none; padding: 0.75rem 1.75rem; border-radius: 8px; display: inline-flex; align-items: center; transition: border-color 0.2s, background 0.2s; }
+    .btn-outline:hover { border-color: #aaa; background: #fafaf9; }
+
+    footer { background: var(--bg-card); border-top: 1px solid var(--border); padding: 4rem 5% 2.5rem; }
+    .footer-top { display: grid; grid-template-columns: 1.8fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+    .footer-brand .fbrand-name { font-family: var(--serif); font-size: 1.1rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); display: block; }
+    .footer-brand .fbrand-sub { font-size: 0.45rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); display: block; margin-top: 2px; margin-bottom: 1rem; }
+    .footer-brand p { font-size: 0.85rem; color: var(--ink-soft); line-height: 1.7; max-width: 260px; }
+    .footer-col h4 { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink); margin-bottom: 1.2rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+    .footer-col ul a { font-size: 0.88rem; color: var(--ink-soft); text-decoration: none; transition: color 0.2s; }
+    .footer-col ul a:hover { color: var(--ink); }
+    .footer-bottom { border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    .footer-bottom p { font-size: 0.75rem; color: var(--ink-soft); }
+    .footer-bottom a { color: var(--ink-soft); text-decoration: none; }
+    @media (max-width: 900px) { .footer-top { grid-template-columns: 1fr 1fr; } .footer-brand { grid-column: 1/-1; } }
+
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <span class="brand-name">Fragoso</span>
+      <span class="brand-sub">Investment</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="about.html">À propos</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html#rdv" class="nav-cta">Prendre rendez-vous →</a>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <span class="section-pill">Nos domaines d'intervention</span>
+      <h1 class="page-title">Des services complets<br>pour votre patrimoine.</h1>
+      <p class="page-subtitle">Une approche globale et indépendante pour accompagner chaque étape de votre parcours patrimonial — de la constitution à la transmission.</p>
+    </div>
+  </div>
+
+  <div class="services-list">
+    <div class="service-item reveal" id="investissement">
+      <span class="svc-num">I</span>
+      <div>
+        <h2 class="svc-title">Investissement & Épargne</h2>
+        <p class="svc-desc">Nous sélectionnons pour vous les meilleurs supports d'investissement en toute indépendance. Notre recommandation repose sur votre profil de risque, votre horizon de placement et vos objectifs de rendement — sans aucune contrainte de distribution.</p>
+        <div class="svc-tags">
+          <span class="svc-tag">ETF & gestion passive</span>
+          <span class="svc-tag">OPCVM sélectionnés</span>
+          <span class="svc-tag">Produits structurés</span>
+          <span class="svc-tag">Private equity</span>
+          <span class="svc-tag">Analyse du profil investisseur</span>
+          <span class="svc-tag">Reporting régulier</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-item reveal" id="fiscalite">
+      <span class="svc-num">II</span>
+      <div>
+        <h2 class="svc-title">Optimisation Fiscale</h2>
+        <p class="svc-desc">La fiscalité est un levier puissant d'optimisation patrimoniale. Nous analysons votre situation globale pour identifier les solutions les plus adaptées : enveloppes fiscales, structures de détention, stratégies de défiscalisation — toujours dans le strict respect de la légalité.</p>
+        <div class="svc-tags">
+          <span class="svc-tag">Assurance-vie & PER</span>
+          <span class="svc-tag">Holding patrimoniale</span>
+          <span class="svc-tag">Démembrement</span>
+          <span class="svc-tag">Stratégies IFI</span>
+          <span class="svc-tag">Girardin, Pinel, Malraux</span>
+          <span class="svc-tag">Optimisation des revenus</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-item reveal" id="immobilier">
+      <span class="svc-num">III</span>
+      <div>
+        <h2 class="svc-title">Immobilier & Patrimoine Foncier</h2>
+        <p class="svc-desc">L'immobilier reste une pierre angulaire de tout patrimoine bien structuré. Nous vous accompagnons dans vos décisions d'investissement immobilier : résidentiel, locatif, professionnel, ou via des SCPI pour une exposition indirecte et liquide.</p>
+        <div class="svc-tags">
+          <span class="svc-tag">Investissement locatif</span>
+          <span class="svc-tag">SCPI & OPCI</span>
+          <span class="svc-tag">SCI familiale</span>
+          <span class="svc-tag">SARL de famille</span>
+          <span class="svc-tag">Défiscalisation immobilière</span>
+          <span class="svc-tag">Analyse de rentabilité</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-item reveal" id="transmission">
+      <span class="svc-num">IV</span>
+      <div>
+        <h2 class="svc-title">Transmission & Succession</h2>
+        <p class="svc-desc">Préparer la transmission de son patrimoine est un acte de responsabilité. Nous vous aidons à anticiper et organiser cette étape : donations, pactes Dutreil, assurance-vie, pour transmettre dans les meilleures conditions fiscales et familiales.</p>
+        <div class="svc-tags">
+          <span class="svc-tag">Audit successoral</span>
+          <span class="svc-tag">Stratégies de donation</span>
+          <span class="svc-tag">Usufruit temporaire</span>
+          <span class="svc-tag">Pacte Dutreil</span>
+          <span class="svc-tag">Transmission via assurance-vie</span>
+          <span class="svc-tag">Mandats de protection</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-item reveal" id="retraite">
+      <span class="svc-num">V</span>
+      <div>
+        <h2 class="svc-title">Retraite & Prévoyance</h2>
+        <p class="svc-desc">Anticiper sa retraite est un enjeu patrimonial majeur. Nous construisons avec vous un plan d'épargne retraite cohérent avec votre situation professionnelle et personnelle, complété par des solutions de prévoyance adaptées.</p>
+        <div class="svc-tags">
+          <span class="svc-tag">Bilan retraite complet</span>
+          <span class="svc-tag">Plan Épargne Retraite (PER)</span>
+          <span class="svc-tag">Article 83 & Madelin</span>
+          <span class="svc-tag">Prévoyance individuelle</span>
+          <span class="svc-tag">Complémentaire santé</span>
+          <span class="svc-tag">Revenus complémentaires</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="approach-section">
+    <div class="approach-header reveal">
+      <span class="section-pill">Méthode</span>
+      <h2 class="section-title">Notre approche en 4 étapes.</h2>
+      <p class="section-sub">Un processus rigoureux pour transformer votre situation patrimoniale.</p>
+    </div>
+    <div class="steps-grid reveal">
+      <div class="step-card"><span class="step-n">1</span><h3 class="step-t">Découverte</h3><p class="step-d">Entretien gratuit pour comprendre votre situation, objectifs et contraintes.</p></div>
+      <div class="step-card"><span class="step-n">2</span><h3 class="step-t">Analyse</h3><p class="step-d">Audit complet de votre patrimoine financier, immobilier et fiscal.</p></div>
+      <div class="step-card"><span class="step-n">3</span><h3 class="step-t">Recommandations</h3><p class="step-d">Stratégie personnalisée, claire et argumentée parmi l'ensemble du marché.</p></div>
+      <div class="step-card"><span class="step-n">4</span><h3 class="step-t">Suivi</h3><p class="step-d">Accompagnement durable, reporting régulier et ajustements au fil de votre vie.</p></div>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <div class="cta-inner reveal">
+      <span class="section-pill">Premier entretien gratuit</span>
+      <h2 class="section-title" style="margin-top:1rem;">Prêt à optimiser<br>votre patrimoine ?</h2>
+      <p class="section-sub" style="margin:0 auto;">45 minutes, sans engagement, en visio ou en présentiel.</p>
+      <div class="cta-actions">
+        <a href="contact.html#rdv" class="btn-dark">Prendre rendez-vous →</a>
+        <a href="contact.html" class="btn-outline">Nous contacter</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="fbrand-name">Fragoso</span>
+        <span class="fbrand-sub">Investment</span>
+        <p>Conseil en gestion de patrimoine indépendant. Expertise, discrétion, performance.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="contact.html#rdv">Prendre rendez-vous</a></li>
+          <li><a href="contact.html">Formulaire</a></li>
+          <li><a href="mailto:clement.fragoso@gmail.com">Email</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Fragoso Investment — Tous droits réservés.</p>
+      <p>CGP Indépendant · <a href="#">Mentions légales</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const revs = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); io.unobserve(x.target); } }), { threshold: 0.08 });
+    revs.forEach(el => io.observe(el));
+  </script>
+</body>
+</html>

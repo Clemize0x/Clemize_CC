@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>À propos — Fragoso Investment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --gold: #c9a84c;
+      --ink: #1a1a1a; --ink-mid: #444440; --ink-soft: #7a7a74;
+      --border: #e8e6e0; --bg: #f7f6f3; --bg-card: #ffffff; --bg-section: #f2f0ec;
+      --serif: 'EB Garamond', Georgia, serif;
+      --sans: 'Instrument Sans', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+    nav { position: fixed; top: 16px; left: 50%; transform: translateX(-50%); z-index: 100; width: calc(100% - 48px); max-width: 1160px; height: 60px; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); border: 1px solid var(--border); border-radius: 12px; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+    .nav-logo { text-decoration: none; display: flex; flex-direction: column; line-height: 1; gap: 2px; }
+    .nav-logo .brand-name { font-family: var(--serif); font-size: 1.1rem; font-weight: 500; letter-spacing: 0.18em; color: var(--ink); text-transform: uppercase; }
+    .nav-logo .brand-sub { font-size: 0.45rem; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.78rem; color: var(--ink-mid); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+    .nav-cta { font-size: 0.75rem; font-weight: 500; color: #fff; background: var(--ink); text-decoration: none; padding: 0.55rem 1.25rem; border-radius: 8px; transition: background 0.2s; }
+    .nav-cta:hover { background: #333; }
+    @media (max-width: 640px) { .nav-links { display: none; } }
+
+    .page-hero { padding: 140px 5% 6rem; background: var(--bg-card); border-bottom: 1px solid var(--border); }
+    .section-pill { display: inline-block; font-size: 0.72rem; font-weight: 500; color: #fff; background: var(--gold); border-radius: 999px; padding: 0.3rem 0.9rem; margin-bottom: 1.2rem; }
+    .page-title { font-family: var(--serif); font-size: clamp(2.4rem, 5.5vw, 4rem); font-weight: 500; line-height: 1.1; color: var(--ink); margin-bottom: 1.4rem; }
+    .page-subtitle { font-size: 1.05rem; color: var(--ink-soft); line-height: 1.75; max-width: 540px; }
+
+    /* Profile split */
+    .profile-section { padding: 7rem 5%; }
+    .split { display: grid; grid-template-columns: 1fr 1.3fr; gap: 5rem; align-items: center; max-width: 1060px; margin: 0 auto; }
+
+    .split-visual {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      aspect-ratio: 4/5;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 1.2rem;
+      position: relative; overflow: hidden;
+    }
+    .split-visual::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 30%, rgba(201,168,76,0.06) 0%, transparent 70%); }
+    .split-monogram { width: 72px; height: 72px; border: 1.5px solid rgba(201,168,76,0.35); border-radius: 4px; display: flex; align-items: center; justify-content: center; }
+    .split-monogram span { font-family: var(--serif); font-size: 2rem; font-style: italic; color: var(--gold); }
+    .split-visual-name { text-align: center; z-index: 1; }
+    .split-visual-name .vname { font-family: var(--serif); font-size: 1.1rem; letter-spacing: 0.12em; color: var(--ink); display: block; text-transform: uppercase; }
+    .split-visual-name .vrole { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: block; margin-top: 4px; }
+    .split-visual-name .vcert { font-size: 0.6rem; color: var(--ink-soft); display: block; margin-top: 4px; }
+
+    .section-title { font-family: var(--serif); font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 500; line-height: 1.15; color: var(--ink); margin-bottom: 1rem; }
+    .section-sub { font-size: 0.97rem; color: var(--ink-soft); line-height: 1.8; }
+
+    .bio-text { font-size: 0.97rem; color: var(--ink-soft); line-height: 1.85; margin-bottom: 1.2rem; }
+
+    .cert-list { margin: 2rem 0 2.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
+    .cert-item { display: flex; align-items: center; gap: 0.8rem; padding: 0.8rem 1rem; background: var(--bg-section); border: 1px solid var(--border); border-radius: 8px; }
+    .cert-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+    .cert-text { font-size: 0.82rem; color: var(--ink-mid); }
+
+    @media (max-width: 860px) { .split { grid-template-columns: 1fr; gap: 2.5rem; } .split-visual { aspect-ratio: 3/2; } }
+
+    /* Values */
+    .values-section { background: var(--bg-section); padding: 6rem 5%; border-top: 1px solid var(--border); }
+    .values-header { text-align: center; margin-bottom: 3.5rem; }
+    .values-header .section-sub { max-width: 500px; margin: 0 auto; }
+
+    .values-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 1060px; margin: 0 auto; }
+    .value-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem 2rem 1.8rem; transition: box-shadow 0.25s, transform 0.25s; }
+    .value-card:hover { box-shadow: 0 6px 28px rgba(0,0,0,0.06); transform: translateY(-2px); }
+    .value-n { font-family: var(--serif); font-size: 2rem; font-style: italic; color: rgba(201,168,76,0.2); display: block; margin-bottom: 0.8rem; line-height: 1; }
+    .value-t { font-family: var(--serif); font-size: 1.2rem; font-weight: 500; color: var(--ink); margin-bottom: 0.5rem; }
+    .value-d { font-size: 0.88rem; color: var(--ink-soft); line-height: 1.7; }
+    @media (max-width: 640px) { .values-grid { grid-template-columns: 1fr; } }
+
+    /* Quote */
+    .quote-section { padding: 6rem 5%; background: var(--bg); }
+    .quote-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+    .big-quote { font-family: var(--serif); font-size: clamp(1.4rem, 3vw, 2rem); font-style: italic; color: var(--ink); line-height: 1.6; position: relative; padding: 2.5rem; }
+    .big-quote::before { content: '"'; position: absolute; top: 0; left: 0; font-size: 5rem; color: rgba(201,168,76,0.15); font-family: var(--serif); line-height: 1; }
+    .quote-source { display: block; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-top: 1.5rem; }
+
+    /* CTA */
+    .cta-section { padding: 6rem 5%; background: var(--bg-section); border-top: 1px solid var(--border); text-align: center; }
+    .cta-inner { max-width: 520px; margin: 0 auto; }
+    .cta-actions { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
+    .btn-dark { font-size: 0.8rem; font-weight: 500; color: #fff; background: var(--ink); text-decoration: none; padding: 0.75rem 1.75rem; border-radius: 8px; display: inline-flex; align-items: center; gap: 0.5rem; transition: background 0.2s, transform 0.15s; }
+    .btn-dark:hover { background: #2a2a2a; transform: translateY(-1px); }
+    .btn-outline { font-size: 0.8rem; color: var(--ink); background: transparent; border: 1px solid var(--border); text-decoration: none; padding: 0.75rem 1.75rem; border-radius: 8px; display: inline-flex; align-items: center; transition: border-color 0.2s; }
+    .btn-outline:hover { border-color: #aaa; }
+
+    footer { background: var(--bg-card); border-top: 1px solid var(--border); padding: 4rem 5% 2.5rem; }
+    .footer-top { display: grid; grid-template-columns: 1.8fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+    .footer-brand .fbrand-name { font-family: var(--serif); font-size: 1.1rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); display: block; }
+    .footer-brand .fbrand-sub { font-size: 0.45rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); display: block; margin-top: 2px; margin-bottom: 1rem; }
+    .footer-brand p { font-size: 0.85rem; color: var(--ink-soft); line-height: 1.7; max-width: 260px; }
+    .footer-col h4 { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink); margin-bottom: 1.2rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+    .footer-col ul a { font-size: 0.88rem; color: var(--ink-soft); text-decoration: none; transition: color 0.2s; }
+    .footer-col ul a:hover { color: var(--ink); }
+    .footer-bottom { border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    .footer-bottom p { font-size: 0.75rem; color: var(--ink-soft); }
+    .footer-bottom a { color: var(--ink-soft); text-decoration: none; }
+    @media (max-width: 900px) { .footer-top { grid-template-columns: 1fr 1fr; } .footer-brand { grid-column: 1/-1; } }
+
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: 0.12s; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <span class="brand-name">Fragoso</span>
+      <span class="brand-sub">Investment</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html" class="active">À propos</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html#rdv" class="nav-cta">Prendre rendez-vous →</a>
+  </nav>
+
+  <div class="page-hero">
+    <span class="section-pill">Mon engagement</span>
+    <h1 class="page-title">L'expertise au service<br>de votre intérêt.</h1>
+    <p class="page-subtitle">Conseiller indépendant, je m'engage à défendre exclusivement vos intérêts — aucun conflit d'intérêt, aucune commission cachée, uniquement votre patrimoine.</p>
+  </div>
+
+  <section class="profile-section">
+    <div class="split">
+      <div class="split-visual reveal">
+        <div class="split-monogram"><span>F</span></div>
+        <div class="split-visual-name">
+          <span class="vname">Fragoso</span>
+          <span class="vrole">Conseil en gestion de patrimoine</span>
+          <span class="vcert">Indépendant · Certifié AMF</span>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <span class="section-pill">Mon parcours</span>
+        <h2 class="section-title" style="margin-top:1rem;">Indépendant, certifié,<br>engagé.</h2>
+        <p class="bio-text">Diplômé en finance et gestion de patrimoine, j'ai consacré ma carrière à accompagner des particuliers, chefs d'entreprise et familles dans la construction et la protection de leur patrimoine.</p>
+        <p class="bio-text">Mon indépendance est la clef de voûte de mon activité : je ne perçois aucune rémunération des établissements financiers, uniquement des honoraires transparents de mes clients. Cette liberté me permet de sélectionner les solutions les plus adaptées parmi l'ensemble du marché.</p>
+        <div class="cert-list">
+          <div class="cert-item"><div class="cert-dot"></div><span class="cert-text">Certifié par l'Autorité des Marchés Financiers (AMF)</span></div>
+          <div class="cert-item"><div class="cert-dot"></div><span class="cert-text">Membre d'une chambre professionnelle agréée (CNCGP / ANACOFI-CIF)</span></div>
+          <div class="cert-item"><div class="cert-dot"></div><span class="cert-text">Enregistré à l'ORIAS en qualité de CIF & ALPSI</span></div>
+          <div class="cert-item"><div class="cert-dot"></div><span class="cert-text">Responsabilité civile professionnelle souscrite</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="values-section">
+    <div class="values-header reveal">
+      <span class="section-pill">Ce qui me différencie</span>
+      <h2 class="section-title" style="margin-top:1rem;">Mes engagements envers vous.</h2>
+      <p class="section-sub">Quatre principes qui guident chaque conseil, chaque recommandation.</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-card reveal">
+        <span class="value-n">I</span>
+        <h3 class="value-t">Indépendance totale</h3>
+        <p class="value-d">Je ne suis lié à aucun établissement financier. Mes recommandations sont guidées uniquement par vos intérêts et les meilleures solutions disponibles sur le marché.</p>
+      </div>
+      <div class="value-card reveal reveal-delay-1">
+        <span class="value-n">II</span>
+        <h3 class="value-t">Transparence absolue</h3>
+        <p class="value-d">Mes honoraires sont clairs et connus à l'avance. Aucune commission cachée, aucun rétrocommissionnement. Vous savez exactement ce que vous payez et pourquoi.</p>
+      </div>
+      <div class="value-card reveal">
+        <span class="value-n">III</span>
+        <h3 class="value-t">Approche globale</h3>
+        <p class="value-d">Je considère votre patrimoine dans son ensemble : financier, immobilier, professionnel, fiscal et successoral. Une vision holistique pour des décisions cohérentes.</p>
+      </div>
+      <div class="value-card reveal reveal-delay-1">
+        <span class="value-n">IV</span>
+        <h3 class="value-t">Relation durable</h3>
+        <p class="value-d">Je construis des relations de confiance sur le long terme. Votre situation évolue, votre stratégie aussi. Je suis à vos côtés à chaque étape importante de votre vie.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="quote-section">
+    <div class="quote-inner reveal">
+      <blockquote class="big-quote">
+        La vraie richesse ne se mesure pas à ce que vous possédez aujourd'hui, mais à la liberté que votre patrimoine vous offrira demain.
+      </blockquote>
+      <span class="quote-source">Fragoso Investment — Notre philosophie</span>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <div class="cta-inner reveal">
+      <span class="section-pill">Un entretien gratuit</span>
+      <h2 class="section-title" style="margin-top:1rem;">Prenons le temps<br>de nous connaître.</h2>
+      <p class="section-sub" style="margin:0 auto;">45 minutes, sans engagement, pour évaluer ensemble comment je peux vous accompagner.</p>
+      <div class="cta-actions">
+        <a href="contact.html#rdv" class="btn-dark">Prendre rendez-vous →</a>
+        <a href="services.html" class="btn-outline">Nos services</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="fbrand-name">Fragoso</span>
+        <span class="fbrand-sub">Investment</span>
+        <p>Conseil en gestion de patrimoine indépendant. Expertise, discrétion, performance.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="contact.html#rdv">Prendre rendez-vous</a></li>
+          <li><a href="contact.html">Formulaire</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Fragoso Investment — Tous droits réservés.</p>
+      <p>CGP Indépendant · <a href="#">Mentions légales</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const revs = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); io.unobserve(x.target); } }), { threshold: 0.08 });
+    revs.forEach(el => io.observe(el));
+  </script>
+</body>
+</html>

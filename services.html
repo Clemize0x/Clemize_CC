@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Services — Fragoso Investment</title>
+  <title>Services — Fragoso Consulting</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -31,7 +31,7 @@
     @media (max-width: 640px) { .nav-links { display: none; } }
 
     /* Page hero */
-    .page-hero { padding: 140px 5% 6rem; background: var(--bg-card); border-bottom: 1px solid var(--border); }
+    .page-hero { padding: 140px 5% 6rem; background: var(--bg); border-bottom: 1px solid var(--border); }
     .page-hero-inner { max-width: 720px; }
     .section-pill { display: inline-block; font-size: 0.72rem; font-weight: 500; color: #fff; background: var(--gold); border-radius: 999px; padding: 0.3rem 0.9rem; margin-bottom: 1.2rem; }
     .page-title { font-family: var(--serif); font-size: clamp(2.4rem, 5.5vw, 4rem); font-weight: 500; line-height: 1.1; color: var(--ink); margin-bottom: 1.4rem; }
@@ -90,6 +90,44 @@
       padding: 0.3rem 0.85rem;
     }
 
+    .svc-inclus {
+      margin-top: 1.5rem;
+    }
+    .svc-inclus-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--ink-mid);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+    .svc-inclus-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+    .svc-inclus-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.55rem;
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+      line-height: 1.5;
+    }
+    .svc-inclus-list li::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+      margin-top: 0.48em;
+    }
+
     @media (max-width: 640px) { .service-item { grid-template-columns: 1fr; gap: 0.8rem; } .svc-num { font-size: 2rem; } }
 
     /* Approach */
@@ -126,9 +164,12 @@
     .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
     .footer-col ul a { font-size: 0.88rem; color: var(--ink-soft); text-decoration: none; transition: color 0.2s; }
     .footer-col ul a:hover { color: var(--ink); }
+    .footer-legal { border-top: 1px solid var(--border); padding-top: 1.5rem; margin-bottom: 1.5rem; }
+    .footer-legal p { font-size: 0.7rem; color: var(--ink-soft); line-height: 1.65; max-width: 860px; }
     .footer-bottom { border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
     .footer-bottom p { font-size: 0.75rem; color: var(--ink-soft); }
     .footer-bottom a { color: var(--ink-soft); text-decoration: none; }
+    .footer-bottom a:hover { color: var(--ink); }
     @media (max-width: 900px) { .footer-top { grid-template-columns: 1fr 1fr; } .footer-brand { grid-column: 1/-1; } }
 
     .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
@@ -140,7 +181,7 @@
   <nav>
     <a href="index.html" class="nav-logo">
       <span class="brand-name">Fragoso</span>
-      <span class="brand-sub">Investment</span>
+      <span class="brand-sub">Consulting</span>
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Accueil</a></li>
@@ -153,9 +194,9 @@
 
   <div class="page-hero">
     <div class="page-hero-inner">
-      <span class="section-pill">Nos domaines d'intervention</span>
-      <h1 class="page-title">Des services complets<br>pour votre patrimoine.</h1>
-      <p class="page-subtitle">Une approche globale et indépendante pour accompagner chaque étape de votre parcours patrimonial — de la constitution à la transmission.</p>
+      <span class="section-pill">Domaines d'accompagnement</span>
+      <h1 class="page-title">Quatre axes pour votre<br>stratégie patrimoniale.</h1>
+      <p class="page-subtitle">Investissement, fiscalité, immobilier, transmission — un accompagnement global et indépendant pour construire, optimiser et protéger votre patrimoine.</p>
     </div>
   </div>
 
@@ -163,31 +204,45 @@
     <div class="service-item reveal" id="investissement">
       <span class="svc-num">I</span>
       <div>
-        <h2 class="svc-title">Investissement & Épargne</h2>
-        <p class="svc-desc">Nous sélectionnons pour vous les meilleurs supports d'investissement en toute indépendance. Notre recommandation repose sur votre profil de risque, votre horizon de placement et vos objectifs de rendement — sans aucune contrainte de distribution.</p>
+        <h2 class="svc-title">Investissement &amp; Classes d'Actifs</h2>
+        <p class="svc-desc">Comprendre les classes d'actifs et les enveloppes d'investissement disponibles est la première condition pour prendre des décisions éclairées. J'accompagne les particuliers dans la compréhension des enveloppes existantes — PEA, assurance-vie, compte-titres, SCPI — et dans la réflexion autour de l'allocation adaptée à leur profil, leurs objectifs et leur horizon de placement. Aucun produit n'est sélectionné ni recommandé : l'objectif est que vous compreniez ce que vous faites, et pourquoi.</p>
         <div class="svc-tags">
-          <span class="svc-tag">ETF & gestion passive</span>
-          <span class="svc-tag">OPCVM sélectionnés</span>
-          <span class="svc-tag">Produits structurés</span>
-          <span class="svc-tag">Private equity</span>
-          <span class="svc-tag">Analyse du profil investisseur</span>
-          <span class="svc-tag">Reporting régulier</span>
+          <span class="svc-tag">Compréhension des enveloppes fiscales</span>
+          <span class="svc-tag">Classes d'actifs &amp; allocation</span>
+          <span class="svc-tag">Analyse de situation</span>
+          <span class="svc-tag">Pistes de réflexion</span>
+          <span class="svc-tag">PEA · Assurance-vie · CTO</span>
+          <span class="svc-tag">Cadrage patrimonial personnalisé</span>
+        </div>
+        <div class="svc-inclus">
+          <span class="svc-inclus-label">Inclus dans l'accompagnement</span>
+          <ul class="svc-inclus-list">
+            <li>Veille hebdomadaire personnalisée — les news qui impactent vos actifs, synthétisées chaque semaine</li>
+            <li>Rapport mensuel personnalisé — envoyé directement par mail</li>
+          </ul>
         </div>
       </div>
     </div>
 
-    <div class="service-item reveal" id="fiscalite">
+    <div class="service-item reveal" id="fiscal">
       <span class="svc-num">II</span>
       <div>
         <h2 class="svc-title">Optimisation Fiscale</h2>
-        <p class="svc-desc">La fiscalité est un levier puissant d'optimisation patrimoniale. Nous analysons votre situation globale pour identifier les solutions les plus adaptées : enveloppes fiscales, structures de détention, stratégies de défiscalisation — toujours dans le strict respect de la légalité.</p>
+        <p class="svc-desc">Une situation fiscale complexe mérite une analyse rigoureuse, pas des solutions toutes faites. J'aide à identifier les leviers fiscaux légaux adaptés à chaque situation : enveloppes fiscalement avantageuses, structures de détention, optimisation des revenus de capitaux. L'objectif est de réduire la pression fiscale de manière cohérente avec l'ensemble de la stratégie patrimoniale — sans jamais perdre de vue les arbitrages à long terme.</p>
         <div class="svc-tags">
-          <span class="svc-tag">Assurance-vie & PER</span>
-          <span class="svc-tag">Holding patrimoniale</span>
-          <span class="svc-tag">Démembrement</span>
-          <span class="svc-tag">Stratégies IFI</span>
-          <span class="svc-tag">Girardin, Pinel, Malraux</span>
+          <span class="svc-tag">Analyse de la situation fiscale</span>
+          <span class="svc-tag">Enveloppes fiscalement avantageuses</span>
+          <span class="svc-tag">Structures de détention</span>
           <span class="svc-tag">Optimisation des revenus</span>
+          <span class="svc-tag">Multi-pays &amp; expatriés</span>
+          <span class="svc-tag">Analyse &amp; pistes de réflexion</span>
+        </div>
+        <div class="svc-inclus">
+          <span class="svc-inclus-label">Inclus dans l'accompagnement</span>
+          <ul class="svc-inclus-list">
+            <li>Alerte fiscale — les évolutions réglementaires qui vous concernent</li>
+            <li>Point mensuel — synthèse des leviers fiscaux à activer</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -195,15 +250,22 @@
     <div class="service-item reveal" id="immobilier">
       <span class="svc-num">III</span>
       <div>
-        <h2 class="svc-title">Immobilier & Patrimoine Foncier</h2>
-        <p class="svc-desc">L'immobilier reste une pierre angulaire de tout patrimoine bien structuré. Nous vous accompagnons dans vos décisions d'investissement immobilier : résidentiel, locatif, professionnel, ou via des SCPI pour une exposition indirecte et liquide.</p>
+        <h2 class="svc-title">Stratégie Immobilière</h2>
+        <p class="svc-desc">L'immobilier représente souvent une part importante du patrimoine — mais rarement bien structuré. J'accompagne dans le cadrage patrimonial des projets immobiliers : choix de la structure de détention (SCI, LMNP, démembrement de propriété), analyse de la rentabilité nette et de l'impact fiscal global. Une vision objective et indépendante, sans lien avec des agents immobiliers, des promoteurs ou des établissements bancaires.</p>
         <div class="svc-tags">
-          <span class="svc-tag">Investissement locatif</span>
-          <span class="svc-tag">SCPI & OPCI</span>
-          <span class="svc-tag">SCI familiale</span>
-          <span class="svc-tag">SARL de famille</span>
-          <span class="svc-tag">Défiscalisation immobilière</span>
-          <span class="svc-tag">Analyse de rentabilité</span>
+          <span class="svc-tag">Cadrage patrimonial</span>
+          <span class="svc-tag">SCI &amp; structures de détention</span>
+          <span class="svc-tag">LMNP &amp; location meublée</span>
+          <span class="svc-tag">Démembrement de propriété</span>
+          <span class="svc-tag">Rentabilité nette &amp; fiscalité</span>
+          <span class="svc-tag">Vision indépendante</span>
+        </div>
+        <div class="svc-inclus">
+          <span class="svc-inclus-label">Inclus dans l'accompagnement</span>
+          <ul class="svc-inclus-list">
+            <li>Veille marché — taux, prix, tension locative dans vos zones cibles</li>
+            <li>Point trimestriel — opportunités et points de vigilance</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -211,31 +273,22 @@
     <div class="service-item reveal" id="transmission">
       <span class="svc-num">IV</span>
       <div>
-        <h2 class="svc-title">Transmission & Succession</h2>
-        <p class="svc-desc">Préparer la transmission de son patrimoine est un acte de responsabilité. Nous vous aidons à anticiper et organiser cette étape : donations, pactes Dutreil, assurance-vie, pour transmettre dans les meilleures conditions fiscales et familiales.</p>
+        <h2 class="svc-title">Transmission &amp; Organisation Successorale</h2>
+        <p class="svc-desc">Anticiper la transmission de son patrimoine est l'un des sujets les plus négligés — et les plus coûteux à ignorer. J'accompagne les particuliers dans la réflexion autour des dispositifs de transmission : donations, démembrement, assurance-vie et clause bénéficiaire, pacte Dutreil. Une fois les orientations stratégiques définies, je vous mets en relation avec les notaires et avocats spécialisés pour la mise en œuvre.</p>
         <div class="svc-tags">
-          <span class="svc-tag">Audit successoral</span>
-          <span class="svc-tag">Stratégies de donation</span>
-          <span class="svc-tag">Usufruit temporaire</span>
+          <span class="svc-tag">Exploration des dispositifs</span>
+          <span class="svc-tag">Donation &amp; démembrement</span>
+          <span class="svc-tag">Assurance-vie &amp; clause bénéficiaire</span>
           <span class="svc-tag">Pacte Dutreil</span>
-          <span class="svc-tag">Transmission via assurance-vie</span>
-          <span class="svc-tag">Mandats de protection</span>
+          <span class="svc-tag">Orientation notaires &amp; avocats</span>
+          <span class="svc-tag">Anticipation successorale</span>
         </div>
-      </div>
-    </div>
-
-    <div class="service-item reveal" id="retraite">
-      <span class="svc-num">V</span>
-      <div>
-        <h2 class="svc-title">Retraite & Prévoyance</h2>
-        <p class="svc-desc">Anticiper sa retraite est un enjeu patrimonial majeur. Nous construisons avec vous un plan d'épargne retraite cohérent avec votre situation professionnelle et personnelle, complété par des solutions de prévoyance adaptées.</p>
-        <div class="svc-tags">
-          <span class="svc-tag">Bilan retraite complet</span>
-          <span class="svc-tag">Plan Épargne Retraite (PER)</span>
-          <span class="svc-tag">Article 83 & Madelin</span>
-          <span class="svc-tag">Prévoyance individuelle</span>
-          <span class="svc-tag">Complémentaire santé</span>
-          <span class="svc-tag">Revenus complémentaires</span>
+        <div class="svc-inclus">
+          <span class="svc-inclus-label">Inclus dans l'accompagnement</span>
+          <ul class="svc-inclus-list">
+            <li>Alerte juridique — les évolutions législatives sur la transmission</li>
+            <li>Point semestriel — revue de votre dispositif et ajustements</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -243,23 +296,39 @@
 
   <div class="approach-section">
     <div class="approach-header reveal">
-      <span class="section-pill">Méthode</span>
-      <h2 class="section-title">Notre approche en 4 étapes.</h2>
-      <p class="section-sub">Un processus rigoureux pour transformer votre situation patrimoniale.</p>
+      <span class="section-pill">Notre méthode</span>
+      <h2 class="section-title">Un cadre clair pour chaque accompagnement.</h2>
+      <p class="section-sub">De votre première prise de contact à l'orientation vers les bons partenaires — un process transparent à chaque étape.</p>
     </div>
     <div class="steps-grid reveal">
-      <div class="step-card"><span class="step-n">1</span><h3 class="step-t">Découverte</h3><p class="step-d">Entretien gratuit pour comprendre votre situation, objectifs et contraintes.</p></div>
-      <div class="step-card"><span class="step-n">2</span><h3 class="step-t">Analyse</h3><p class="step-d">Audit complet de votre patrimoine financier, immobilier et fiscal.</p></div>
-      <div class="step-card"><span class="step-n">3</span><h3 class="step-t">Recommandations</h3><p class="step-d">Stratégie personnalisée, claire et argumentée parmi l'ensemble du marché.</p></div>
-      <div class="step-card"><span class="step-n">4</span><h3 class="step-t">Suivi</h3><p class="step-d">Accompagnement durable, reporting régulier et ajustements au fil de votre vie.</p></div>
+      <div class="step-card">
+        <span class="step-n">1</span>
+        <h3 class="step-t">Découverte</h3>
+        <p class="step-d">Premier entretien gratuit pour comprendre votre situation, vos objectifs et les sujets prioritaires à adresser.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-n">2</span>
+        <h3 class="step-t">Diagnostic</h3>
+        <p class="step-d">Bilan patrimonial complet : actifs, passifs, fiscalité, objectifs. La base de toute décision éclairée.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-n">3</span>
+        <h3 class="step-t">Analyse &amp; Rapport</h3>
+        <p class="step-d">Restitution de l'analyse sous forme d'un rapport personnalisé : stratégies adaptées, enveloppes disponibles, arbitrages possibles. Un document de référence pour décider en connaissance de cause.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-n">4</span>
+        <h3 class="step-t">Orientation</h3>
+        <p class="step-d">Mise en relation avec des partenaires certifiés (CIF, notaires, experts-comptables) pour la mise en œuvre des stratégies retenues.</p>
+      </div>
     </div>
   </div>
 
   <div class="cta-section">
     <div class="cta-inner reveal">
       <span class="section-pill">Premier entretien gratuit</span>
-      <h2 class="section-title" style="margin-top:1rem;">Prêt à optimiser<br>votre patrimoine ?</h2>
-      <p class="section-sub" style="margin:0 auto;">45 minutes, sans engagement, en visio ou en présentiel.</p>
+      <h2 class="section-title" style="margin-top:1rem;">Prenons le temps<br>de votre situation.</h2>
+      <p class="section-sub" style="margin:0 auto;">30 minutes, sans engagement, pour identifier vos priorités patrimoniales et tracer le chemin. Nous vous répondrons sous 24h.</p>
       <div class="cta-actions">
         <a href="contact.html#rdv" class="btn-dark">Prendre rendez-vous →</a>
         <a href="contact.html" class="btn-outline">Nous contacter</a>
@@ -271,8 +340,8 @@
     <div class="footer-top">
       <div class="footer-brand">
         <span class="fbrand-name">Fragoso</span>
-        <span class="fbrand-sub">Investment</span>
-        <p>Conseil en gestion de patrimoine indépendant. Expertise, discrétion, performance.</p>
+        <span class="fbrand-sub">Consulting</span>
+        <p>Accompagnement et éducation financière indépendants pour particuliers disposant d'un patrimoine financier de 100&nbsp;000€ et plus.</p>
       </div>
       <div class="footer-col">
         <h4>Navigation</h4>
@@ -288,13 +357,16 @@
         <ul>
           <li><a href="contact.html#rdv">Prendre rendez-vous</a></li>
           <li><a href="contact.html">Formulaire</a></li>
-          <li><a href="mailto:clement.fragoso@gmail.com">Email</a></li>
+          <li><a href="mailto:clement.fragoso@gmail.com">clement.fragoso@gmail.com</a></li>
         </ul>
       </div>
     </div>
+    <div class="footer-legal">
+      <p>Fragoso Consulting est une activité d'accompagnement et d'éducation financière. Fragoso Consulting ne fournit pas de conseil en investissement au sens réglementaire du terme et n'est pas enregistré comme Conseiller en Investissements Financiers auprès de l'AMF.</p>
+    </div>
     <div class="footer-bottom">
-      <p>© 2025 Fragoso Investment — Tous droits réservés.</p>
-      <p>CGP Indépendant · <a href="#">Mentions légales</a></p>
+      <p>© 2025 Fragoso Consulting — Tous droits réservés.</p>
+      <p>Accompagnateur Financier Indépendant · <a href="#">Mentions légales</a></p>
     </div>
   </footer>
 

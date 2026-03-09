@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fragoso Investment — Conseil en Gestion de Patrimoine</title>
-  <meta name="description" content="Fragoso Investment, conseiller en gestion de patrimoine indépendant. Expertise, discrétion, performance." />
+  <title>Fragoso Consulting — Accompagnateur Financier Indépendant</title>
+  <meta name="description" content="Fragoso Consulting — Accompagnateur financier indépendant pour particuliers à haut patrimoine (100 000€+). Indépendant des banques, honoraires transparents, aligné avec vos intérêts." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -262,8 +262,6 @@
         z-index: 1;
       }
     }
-
-    /* Globe card removed - globe floats on background */
 
     @keyframes fade-up {
       from { opacity: 0; transform: translateY(18px); }
@@ -613,7 +611,7 @@
       overflow: hidden;
       transition: max-height 0.35s ease, padding 0.35s ease;
     }
-    .faq-answer.open { max-height: 200px; padding-top: 0.9rem; }
+    .faq-answer.open { max-height: 260px; padding-top: 0.9rem; }
 
     /* ─── CTA BAND ─── */
     .cta-section {
@@ -662,6 +660,12 @@
     .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
     .footer-col ul a { font-size: 0.88rem; color: var(--ink-soft); text-decoration: none; transition: color 0.2s; }
     .footer-col ul a:hover { color: var(--ink); }
+    .footer-legal {
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .footer-legal p { font-size: 0.7rem; color: var(--ink-soft); line-height: 1.65; max-width: 860px; }
     .footer-bottom {
       border-top: 1px solid var(--border);
       padding-top: 1.5rem;
@@ -710,7 +714,7 @@
   <nav id="navbar">
     <a href="index.html" class="nav-logo">
       <span class="brand-name">Fragoso</span>
-      <span class="brand-sub">Investment</span>
+      <span class="brand-sub">Consulting</span>
     </a>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Accueil</a></li>
@@ -723,21 +727,19 @@
 
   <!-- ── HERO ── -->
   <section id="hero">
-    <div class="hero-eyebrow">✦ &nbsp;Conseiller en Gestion de Patrimoine Indépendant</div>
+    <div class="hero-eyebrow">✦ &nbsp;Accompagnateur Financier Indépendant · Haut Patrimoine</div>
 
     <h1 class="hero-title">
-      Comprendre ce qui fait<br>
-      <em>croître</em> et protège<br>votre patrimoine
+      Comprendre ce qui fait<br><em>croître</em> et protège<br>votre patrimoine
     </h1>
 
     <p class="hero-sub">
-      Fragoso Investment est un cabinet indépendant qui connecte stratégie d'investissement,
-      optimisation fiscale et transmission en un accompagnement cohérent et personnalisé.
+      Indépendant des banques, aligné avec vos intérêts. Un accompagnement patrimonial exclusif pour les particuliers disposant d'un patrimoine financier de 100&nbsp;000€ et plus.
     </p>
 
     <div class="hero-actions">
       <a href="contact.html#rdv" class="btn-dark">Prendre rendez-vous →</a>
-      <a href="services.html" class="btn-outline">Découvrir nos services</a>
+      <a href="services.html" class="btn-outline">Découvrir notre approche</a>
     </div>
 
     <!-- 3D Globe Three.js -->
@@ -749,45 +751,45 @@
   <!-- ── STATS BAR ── -->
   <div class="stats-bar">
     <div class="stat-item reveal">
-      <span class="stat-num">15+</span>
-      <span class="stat-label">Années d'expérience</span>
+      <span class="stat-num">100k €</span>
+      <span class="stat-label">Patrimoine financier minimum</span>
     </div>
     <div class="stat-item reveal reveal-delay-1">
       <span class="stat-num">100%</span>
-      <span class="stat-label">Indépendant</span>
+      <span class="stat-label">Indépendant des banques</span>
     </div>
     <div class="stat-item reveal reveal-delay-2">
-      <span class="stat-num">AMF</span>
-      <span class="stat-label">Certifié & réglementé</span>
+      <span class="stat-num">Discret</span>
+      <span class="stat-label">Confidentialité absolue</span>
     </div>
     <div class="stat-item reveal reveal-delay-3">
-      <span class="stat-num">360°</span>
-      <span class="stat-label">Approche globale</span>
+      <span class="stat-num" style="white-space:nowrap;">Haute-Savoie</span>
+      <span class="stat-label">Présentiel &amp; visio</span>
     </div>
   </div>
 
-  <!-- ── APPROACH (Comment ça marche) ── -->
+  <!-- ── APPROACH ── -->
   <section id="approach">
     <div class="approach-header reveal">
-      <span class="section-pill">Comment ça marche</span>
-      <h2 class="section-title">Conçu pour<br>les particuliers exigeants.</h2>
-      <p class="section-sub">Un processus structuré en quatre étapes pour transformer votre situation patrimoniale.</p>
+      <span class="section-pill">Notre approche</span>
+      <h2 class="section-title">Une méthode pensée<br>pour votre indépendance.</h2>
+      <p class="section-sub">Pas de solution générique. Chaque accompagnement commence par comprendre votre situation réelle — et se construit autour de vos objectifs, pas de ceux de votre banque.</p>
     </div>
     <div class="approach-steps reveal">
       <div class="approach-step">
         <span class="step-index">1</span>
-        <h3 class="step-title">Découverte</h3>
-        <p class="step-desc">Premier entretien gratuit pour comprendre votre situation, vos objectifs et vos contraintes. Aucun engagement.</p>
+        <h3 class="step-title">Diagnostic</h3>
+        <p class="step-desc">Bilan complet de votre situation patrimoniale, financière et fiscale. Comprendre où vous en êtes avant d'envisager où vous voulez aller.</p>
       </div>
       <div class="approach-step">
         <span class="step-index">2</span>
-        <h3 class="step-title">Audit patrimonial</h3>
-        <p class="step-desc">Analyse complète de votre patrimoine financier, immobilier et professionnel. Identification des leviers d'optimisation.</p>
+        <h3 class="step-title">Analyse</h3>
+        <p class="step-desc">Exploration des enveloppes et classes d'actifs adaptées à votre situation. Éducation, pistes de réflexion, cas pratiques — pour décider en connaissance de cause.</p>
       </div>
       <div class="approach-step">
         <span class="step-index">3</span>
-        <h3 class="step-title">Recommandations</h3>
-        <p class="step-desc">Stratégie personnalisée, claire et argumentée. Sélection des solutions les mieux adaptées parmi l'ensemble du marché.</p>
+        <h3 class="step-title">Accompagnement</h3>
+        <p class="step-desc">Suivi dans le temps pour ajuster la stratégie à l'évolution de votre situation. Disponible, réactif — exclusivement centré sur vos objectifs.</p>
       </div>
     </div>
   </section>
@@ -795,34 +797,34 @@
   <!-- ── SERVICES CARDS ── -->
   <section id="services">
     <div class="features-header reveal">
-      <span class="section-pill">Nos services</span>
-      <h2 class="section-title">Ce qui rend Fragoso Investment<br>unique.</h2>
-      <p class="section-sub">Une indépendance totale vis-à-vis des établissements financiers, pour des conseils uniquement guidés par vos intérêts.</p>
+      <span class="section-pill">Domaines d'accompagnement</span>
+      <h2 class="section-title">Quatre axes pour construire<br>et préserver votre patrimoine.</h2>
+      <p class="section-sub">Investissement, fiscalité, immobilier, transmission — une vision globale et indépendante au service de vos objectifs.</p>
     </div>
 
     <div class="features-grid">
       <div class="feature-card reveal">
-        <span class="feature-num">Service I</span>
-        <h3 class="feature-title">Investissement & Épargne</h3>
-        <p class="feature-desc">Sélection rigoureuse de supports d'investissement adaptés à votre profil : ETF, OPCVM, produits structurés, private equity. Aucune contrainte de distribution.</p>
+        <span class="feature-num">Axe I</span>
+        <h3 class="feature-title">Investissement &amp; Classes d'Actifs</h3>
+        <p class="feature-desc">Compréhension des enveloppes d'investissement (PEA, assurance-vie, compte-titres) et des classes d'actifs. Analyse de votre situation et pistes de réflexion pour structurer votre épargne de manière cohérente.</p>
         <a href="services.html#investissement" class="feature-link">En savoir plus →</a>
       </div>
       <div class="feature-card reveal reveal-delay-1">
-        <span class="feature-num">Service II</span>
+        <span class="feature-num">Axe II</span>
         <h3 class="feature-title">Optimisation Fiscale</h3>
-        <p class="feature-desc">Assurance-vie, PER, holding patrimoniale, démembrement — des stratégies légales pour réduire votre charge fiscale et structurer votre patrimoine.</p>
-        <a href="services.html#fiscalite" class="feature-link">En savoir plus →</a>
+        <p class="feature-desc">Identification des leviers fiscaux adaptés à votre situation : enveloppes avantageuses, structures de détention, stratégies de réduction. Analyse &amp; pistes de réflexion — sans produit à vendre.</p>
+        <a href="services.html#fiscal" class="feature-link">En savoir plus →</a>
       </div>
       <div class="feature-card reveal">
-        <span class="feature-num">Service III</span>
-        <h3 class="feature-title">Immobilier & Défiscalisation</h3>
-        <p class="feature-desc">Investissement locatif, SCPI, SCI familiale, dispositifs Pinel, Malraux. Structuration juridique et fiscale optimale de votre patrimoine foncier.</p>
+        <span class="feature-num">Axe III</span>
+        <h3 class="feature-title">Stratégie Immobilière</h3>
+        <p class="feature-desc">Cadrage patrimonial de vos projets immobiliers : structure de détention, analyse de la rentabilité et de l'impact fiscal. Une vision objective, sans lien avec les agents ou les promoteurs.</p>
         <a href="services.html#immobilier" class="feature-link">En savoir plus →</a>
       </div>
       <div class="feature-card reveal reveal-delay-1">
-        <span class="feature-num">Service IV</span>
-        <h3 class="feature-title">Transmission & Succession</h3>
-        <p class="feature-desc">Anticipation et organisation de la transmission dans les meilleures conditions. Donations, pactes Dutreil, démembrement, assurance-vie.</p>
+        <span class="feature-num">Axe IV</span>
+        <h3 class="feature-title">Transmission &amp; Succession</h3>
+        <p class="feature-desc">Anticiper la transmission de votre patrimoine pour en préserver la valeur et protéger vos proches. Exploration des dispositifs existants et orientation vers les spécialistes adaptés.</p>
         <a href="services.html#transmission" class="feature-link">En savoir plus →</a>
       </div>
     </div>
@@ -831,28 +833,19 @@
   <!-- ── ABOUT SPLIT ── -->
   <section id="about">
     <div class="split">
-      <div class="split-visual reveal">
-        <div class="split-monogram">
-          <span>F</span>
-        </div>
-        <div class="split-visual-name">
-          <span class="vname">Fragoso</span>
-          <span class="vrole">Conseil en gestion de patrimoine</span>
-          <span class="vcert">Certifié AMF · Indépendant</span>
-        </div>
-      </div>
+      <div class="split-visual reveal" style="background-image:url('IMG_5498.jpg'); background-size:cover; background-position:center top;"></div>
 
       <div class="split-content reveal reveal-delay-1">
         <span class="section-pill">À propos</span>
-        <h2 class="section-title">Votre intérêt,<br>uniquement.</h2>
-        <p class="section-sub">Conseiller indépendant, je ne perçois aucune rémunération des établissements financiers. Mes honoraires sont transparents et connus à l'avance. Ainsi vous bénéficiez de recommandations libres de tout conflit d'intérêt.</p>
+        <h2 class="section-title">Vous n'avez qu'un seul patron :<br><em>vous.</em></h2>
+        <p class="section-sub">Les établissements financiers ont leurs propres objectifs commerciaux. Mon rôle est différent : vous aider à comprendre votre patrimoine, à identifier les bonnes questions, et à prendre des décisions éclairées — sans conflit d'intérêt.</p>
 
         <ul class="checklist">
-          <li>Indépendance totale vis-à-vis des banques et assureurs</li>
-          <li>Rémunération en honoraires — aucune commission cachée</li>
-          <li>Certifié AMF, enregistré ORIAS</li>
-          <li>Accès à l'ensemble du marché sans restriction</li>
-          <li>Relation de confiance et accompagnement sur le long terme</li>
+          <li>Accompagnement exclusif haut patrimoine — 100&nbsp;000€ minimum</li>
+          <li>Indépendant de tout établissement financier ou bancaire</li>
+          <li>Honoraires transparents — aucune commission perçue</li>
+          <li>Approche pédagogique, sur mesure et confidentielle</li>
+          <li>Orientation vers des partenaires certifiés pour la mise en œuvre</li>
         </ul>
 
         <a href="about.html" class="btn-dark">En savoir plus →</a>
@@ -865,46 +858,46 @@
     <div class="why-layout">
       <div class="why-left reveal">
         <span class="section-pill">Vos questions</span>
-        <h2 class="section-title" style="font-size: clamp(1.8rem,3.5vw,2.6rem);">D'autres questions ?<br>On a les réponses.</h2>
-        <p class="section-sub">Vous n'avez pas trouvé ce que vous cherchez ? <a href="contact.html" style="color:var(--ink); text-underline-offset:3px;">Contactez-nous</a>.</p>
+        <h2 class="section-title" style="font-size: clamp(1.8rem,3.5vw,2.6rem);">Les questions<br>que vous vous posez.</h2>
+        <p class="section-sub">Vous n'avez pas trouvé ce que vous cherchez ? <a href="contact.html" style="color:var(--ink); text-underline-offset:3px;">Écrivez-nous</a>.</p>
         <a href="contact.html#rdv" class="btn-dark" style="margin-top:1.8rem; display:inline-flex;">Prendre rendez-vous →</a>
       </div>
 
       <div class="faq-list reveal reveal-delay-1">
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            Qu'est-ce qu'un CGP indépendant ?
+            À partir de quel patrimoine travaillez-vous ?
             <span class="faq-icon">+</span>
           </button>
-          <div class="faq-answer">Un Conseiller en Gestion de Patrimoine indépendant n'est lié à aucun établissement financier. Il sélectionne les solutions les plus adaptées parmi l'ensemble du marché, et est rémunéré uniquement par ses clients en honoraires, sans commission des produits recommandés.</div>
+          <div class="faq-answer">Nous accompagnons exclusivement les particuliers disposant d'un patrimoine financier de 100&nbsp;000€ minimum. Ce seuil nous permet de vous offrir un accompagnement vraiment personnalisé et d'avoir un impact significatif sur votre situation patrimoniale.</div>
         </div>
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            Le premier entretien est-il vraiment gratuit ?
+            Quelle est la différence avec mon banquier privé ?
             <span class="faq-icon">+</span>
           </button>
-          <div class="faq-answer">Oui, totalement. Le premier entretien de 45 à 60 minutes est gratuit et sans engagement. C'est l'occasion pour moi de comprendre votre situation et pour vous de juger si notre collaboration vous convient.</div>
+          <div class="faq-answer">Votre banquier privé est salarié d'un établissement qui a ses propres objectifs commerciaux. Il est incentivé à placer les produits de sa gamme. Ici, l'unique objectif est le vôtre. Aucune commission, aucun produit à vendre — uniquement votre intérêt patrimonial.</div>
         </div>
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            Quelle est votre structure de rémunération ?
+            Qu'est-ce qu'un accompagnateur financier indépendant ?
             <span class="faq-icon">+</span>
           </button>
-          <div class="faq-answer">Je suis rémunéré exclusivement en honoraires, présentés de façon transparente avant toute mission. Cela peut être un forfait, un tarif horaire, ou des honoraires de suivi. Aucune rétrocommission des produits financiers recommandés.</div>
+          <div class="faq-answer">Un accompagnateur financier indépendant vous aide à comprendre votre patrimoine, à explorer les stratégies disponibles et à poser les bonnes questions. Il ne vend pas de produits financiers et n'est pas rémunéré par des établissements. Il vous oriente ensuite vers des professionnels certifiés pour la mise en œuvre.</div>
         </div>
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            À partir de quel patrimoine peut-on faire appel à vous ?
+            Comment vous rémunérez-vous ?
             <span class="faq-icon">+</span>
           </button>
-          <div class="faq-answer">Je travaille avec des clients à des stades variés de constitution de patrimoine. L'essentiel est d'avoir un projet clair et la volonté de l'optimiser. Contactez-nous pour évaluer ensemble si nous pouvons vous apporter de la valeur.</div>
+          <div class="faq-answer">Exclusivement par honoraires, facturés directement à vous. Aucune commission de la part de banques, assureurs ou gestionnaires d'actifs. Vous savez exactement ce que vous payez — et pourquoi. Cette indépendance garantit que l'accompagnement est uniquement guidé par votre intérêt.</div>
         </div>
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            Proposez-vous des consultations en visioconférence ?
+            Puis-je continuer à travailler avec ma banque ?
             <span class="faq-icon">+</span>
           </button>
-          <div class="faq-answer">Oui. Les entretiens peuvent se tenir en présentiel sur Paris & Île-de-France, ou en visioconférence pour les clients dans toute la France.</div>
+          <div class="faq-answer">Bien sûr. Les banques sont des outils utiles — pas des partenaires de confiance inconditionnels. L'objectif n'est pas de fuir les établissements financiers, mais de ne pas leur déléguer la stratégie de votre patrimoine. Vous gardez le contrôle, en sachant exactement ce que vous faites et pourquoi.</div>
         </div>
       </div>
     </div>
@@ -914,11 +907,11 @@
   <div class="cta-section">
     <div class="cta-inner reveal">
       <span class="section-pill">Premier entretien gratuit</span>
-      <h2 class="section-title" style="margin-top:1rem;">Commençons par<br>vous connaître.</h2>
-      <p class="section-sub" style="text-align:center; max-width:460px; margin:0 auto 2.5rem;">Le premier entretien est gratuit et sans engagement. Partagez votre situation, vos objectifs — nous traceons le chemin ensemble.</p>
+      <h2 class="section-title" style="margin-top:1rem;">Votre patrimoine mérite<br>une vision indépendante.</h2>
+      <p class="section-sub" style="text-align:center; max-width:480px; margin:0 auto 2.5rem;">30 minutes, sans engagement, pour établir un premier bilan de votre situation et tracer le chemin. Partagez votre situation — nous revenons sous 24h.</p>
       <div class="cta-actions">
         <a href="contact.html#rdv" class="btn-dark">Prendre rendez-vous →</a>
-        <a href="contact.html" class="btn-outline">Nous contacter</a>
+        <a href="services.html" class="btn-outline">Nos services</a>
       </div>
     </div>
   </div>
@@ -928,8 +921,8 @@
     <div class="footer-top">
       <div class="footer-brand">
         <span class="fbrand-name">Fragoso</span>
-        <span class="fbrand-sub">Investment</span>
-        <p>Conseil en gestion de patrimoine indépendant. Expertise, discrétion, performance au service de vos ambitions.</p>
+        <span class="fbrand-sub">Consulting</span>
+        <p>Accompagnement et éducation financière indépendants pour particuliers disposant d'un patrimoine financier de 100&nbsp;000€ et plus.</p>
       </div>
       <div class="footer-col">
         <h4>Navigation</h4>
@@ -949,11 +942,15 @@
         </ul>
       </div>
     </div>
+    <div class="footer-legal">
+      <p>Fragoso Consulting est une activité d'accompagnement et d'éducation financière. Fragoso Consulting ne fournit pas de conseil en investissement au sens réglementaire du terme et n'est pas enregistré comme Conseiller en Investissements Financiers auprès de l'AMF.</p>
+    </div>
     <div class="footer-bottom">
-      <p>© 2025 Fragoso Investment — Tous droits réservés.</p>
-      <p>CGP Indépendant · <a href="#">Mentions légales</a> · <a href="#">Confidentialité</a></p>
+      <p>© 2025 Fragoso Consulting — Tous droits réservés.</p>
+      <p>Accompagnateur Financier Indépendant · <a href="#">Mentions légales</a> · <a href="#">Confidentialité</a></p>
     </div>
   </footer>
+
 
   <!-- Three.js Globe -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>

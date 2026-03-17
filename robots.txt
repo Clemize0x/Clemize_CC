@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://fragosoconsulting.fr/sitemap.xml
+Sitemap: https://fragoso-consulting.com/sitemap.xml

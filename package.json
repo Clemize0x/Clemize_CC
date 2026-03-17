@@ -1,0 +1,25 @@
+{
+  "name": "clemize_cc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "og": "node generate-og.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Clemize0x/Clemize_CC.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Clemize0x/Clemize_CC/issues"
+  },
+  "homepage": "https://github.com/Clemize0x/Clemize_CC#readme",
+  "dependencies": {
+    "puppeteer": "^24.39.1"
+  }
+}
